@@ -8,6 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+          # generate callgraph
+      - name: Install Debricked CLI
+        run: curl -L https://github.com/debricked/cli/releases/latest/download/cli_linux_x86_64.tar.gz | tar -xz debricked
+        shell: bash
+      - name: Debricked Scan
+        run: ./debricked callgraph
+        shell: bash
       - uses: debricked/actions@v3
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
