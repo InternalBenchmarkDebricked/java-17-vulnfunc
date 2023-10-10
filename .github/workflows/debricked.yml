@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
           # generate callgraph
       - name: Install Debricked CLI
-        run: curl -L https://github.com/github/debricked/cli/refs/heads/vuln-func-cmd.tar.gz | tar -xz debricked
+        run: curl -L https://github.com/debricked/cli/archive/refs/heads/vuln-func-cmd.tar.gz | tar -xz debricked
         shell: bash
       - name: Make
         run: ./make
