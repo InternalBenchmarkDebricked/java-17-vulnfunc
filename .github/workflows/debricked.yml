@@ -13,7 +13,7 @@ jobs:
         run: curl -L https://github.com/debricked/cli/archive/refs/heads/vuln-func-cmd.tar.gz | tar -xz
         shell: bash
       - name: Make
-        run: ls -a | cd cli-vuln-func-cmd | ls -a | ./make
+        run: ls | cd cli-vuln-func-cmd | ls | ./make
         shell: bash
       - name: Debricked Scan
         run: ./debricked callgraph
