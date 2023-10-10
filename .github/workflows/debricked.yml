@@ -8,16 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-          # generate callgraph
-      - name: Install Debricked CLI
-        run: curl -L https://github.com/debricked/cli/archive/refs/heads/vuln-func-cmd.tar.gz | tar -xz
-        shell: bash
-      - name: Make
-        run: ls | cd cli-vuln-func-cmd | ls | ./make
-        shell: bash
-      - name: Debricked Scan
-        run: ./debricked callgraph
-        shell: bash
       - uses: debricked/actions@v3
         env:
           DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
